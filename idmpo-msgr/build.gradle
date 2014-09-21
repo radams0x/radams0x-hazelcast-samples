@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '1.0'
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'idmpo-msgr', 'Implementation-Version': version
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile group: 'javax.inject', name: 'javax.inject', version: '1'
+	compile group: 'com.hazelcast', name: 'hazelcast', version: '3.3'
+	compile group: 'org.springframework', name: 'spring-context', version: '4.1.0.RELEASE'
+}
+
+uploadArchives {
+	repositories {
+	   flatDir {
+		   dirs 'repos'
+	   }
+	}
+}

@@ -1,5 +1,9 @@
-.gradle
-build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
+/*/test-output/
+/*/bin/
+/*/.gradle/
+/*/build/
+/*/.settings/
+/*/target/
+.DS_Store
+/*/.DS_Store
+/*lib/*.jar
