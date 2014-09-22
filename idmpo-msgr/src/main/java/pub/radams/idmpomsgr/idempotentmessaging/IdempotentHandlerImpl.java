@@ -7,15 +7,16 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import pub.radams.idmpomsgr.biz.IdempotentBizTask;
+import pub.radams.idmpomsgr.IdempotentMessageHandler;
+import pub.radams.idmpomsgr.IdempotentBizTask;
 import pub.radams.idmpomsgr.datagrid.MemoryClusterService;
 
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 
 
-@Service("idempotentHandler")
-public class IdempotentHandler {
+@Service("idempotentMessageHandler")
+public class IdempotentHandlerImpl implements IdempotentMessageHandler{
 
 	
 	private List<String> receivedMsgs;
